@@ -1,0 +1,8 @@
+
+#  translator-comments
+#. extracted-comments
+#: reference…
+#, flag…
+#| msgid previous-untranslated-string
+msgid "test"
+msgstr "test message str en fr"
