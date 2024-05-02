@@ -6,7 +6,7 @@ import (
 	"github.com/leonelquinteros/gotext"
 )
 
-func ExampleGetText() {
+func ExampleGoText() {
 
 	fmt.Println(">> exampleGetText <<")
 	// Create Locale with library path and language code
