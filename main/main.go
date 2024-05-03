@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/pmperrin/examples"
 	"github.com/pmperrin/simpleI18n"
 )
@@ -39,7 +41,13 @@ func main() {
 }
 
 func useLib() {
-	i18n := simpleI18n.SimpleI18n{Path: "./local", Filename: "messages"}
-	i18n.Init()
-
+	fmt.Println(">> Starting lib")
+	//i18n := simpleI18n.SimpleI18n{Path: "./local", Filename: "messages"}
+	i18n, err := simpleI18n.InitI18n("./local", "messages")
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	lang := i18n.GetLang("en")
+	fmt.Println(">" + lang.GetText("welcome.message"))
+	fmt.Println(">" + lang.GetTextWithParam("welcome.message.param", map[string]string{"name": "Toto"}))
 }
